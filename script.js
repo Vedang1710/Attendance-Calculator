@@ -25,6 +25,10 @@ document.getElementById('calculate-attendance').addEventListener('click', functi
 
         totalClasses += totalHeld;
         totalAttended += attended;
+        if(attended > totalHeld){
+            alert(`Classes attended cannot be greater than total classes held for ${subjectName}.`);
+            return;
+        }
 
         const attendancePercentage = totalHeld > 0 ? (attended / totalHeld) * 100 : 0;
 
